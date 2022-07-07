@@ -11,7 +11,7 @@
     "build:babel": "babel src/georaster-layer-for-leaflet.ts -o dist/georaster-layer-for-leaflet.bundle.js",
     "build:main": "tsc",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:webpack:lite": "LITE=true webpack",
+    "build:webpack:lite": "cross-env LITE=true webpack",
     "build:webpack": "webpack",
     "build": "npm run clean && npm run build:babel && npm run build:webpack && npm run build:webpack:lite && npm run build:main",
     "dev": "concurrently \"npm run serve\" \"webpack --watch\" ",
@@ -22,7 +22,7 @@
     "prep-legacy": "./prep-legacy.sh",
     "test": "echo 'to set library, run dev and serve and open the html files in test folder on localhost'",
     "validate": "npm run lint && npm run format && npm run check-types",
-    "serve": "HOST=0.0.0.0 http-server --cors"
+    "serve": "cross-env HOST=0.0.0.0 http-server --cors"
   },
   "repository": {
     "type": "git",
@@ -68,6 +68,7 @@
     "@typescript-eslint/parser": "^4.11.1",
     "babel-loader": "^8.1.0",
     "concurrently": "^5.3.0",
+	"cross-env": "^7.0.3",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",

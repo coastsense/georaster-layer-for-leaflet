@@ -22,7 +22,7 @@
     "arrow-parens": ["error", "as-needed"],
     "comma-dangle": ["error", { "objects": "never" }],
     "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": 0,
     "no-console": "off",
     "no-multiple-empty-lines": "error",
     "no-unused-vars": ["error", { "args": "none" }],
